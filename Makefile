@@ -15,7 +15,7 @@ RM		:=	rm -rf
 MASTER_HEADER := master.h
 # Headers
 HEADER_DIR	:=	inc
-HEADER		:=	monitoring.h
+HEADER		:=	monitoring.h	define.h
 H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
@@ -70,7 +70,7 @@ clean:
 
 # Full clean: same as 'clean', but removes the generated libs/programs as well
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 # Remake: full cleans and runs 'all' rule
 re: fclean all
