@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   monitoring.h                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 20:01:25 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/07/28 22:11:26 by bmugnol-         ###   ########.fr       */
+/*   Created: 2022/07/28 20:00:09 by bmugnol-          #+#    #+#             */
+/*   Updated: 2022/07/29 20:45:06 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MONITORING_H
-# define MONITORING_H
+#include "monitoring.h"
+#include "define.h"
 
-# include <errno.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
-
-int	program_param_verifier(int argc, char **argv);
-int	generic_error(int err_code, char *err_msg);
-
-#endif
+int	main(int argc, char **argv)
+{
+	if (program_param_verifier(argc, argv) == -1)
+		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
+}
