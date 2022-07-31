@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   file_handler.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/28 20:00:09 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/07/31 23:57:21 by bmugnol-         ###   ########.fr       */
+/*   Created: 2022/07/28 20:16:21 by bmugnol-          #+#    #+#             */
+/*   Updated: 2022/07/31 23:59:15 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "monitoring.h"
 #include "define.h"
 
-int	main(int argc, char **argv)
+FILE	infile_opener(void)
 {
-	FILE	*config_file;
-	FILE	*log_file;
+	FILE	*f_stream;
 
-	if (program_param_verifier(argc, argv) == -1)
-		return (EXIT_FAILURE);
-	config_file = infile_opener();
-	log_file = outfile_opener();
-	if (config_file == NULL || log_file == NULL)
+	f_stream = fopen(I_FILE, "r");
+	if (f_stream == NULL)
+		perror("fopen");
+	return (f_stream);
+}
+
+FILE	outfile_opener(void)
+{
+	FILE	*f_stream;
+
+	f_stream = fopen(O_FILE, "a+");
+	if (f_stream == NULL)
+		perror("fopen");
+	return (f_stream);
+}
+
+int	close_fstream(FILE *file)
+{
+	if (file != NULL && fclose(file) != 0)
 	{
-		close_fstream(config_file);
-		close_fstream(log_file);
+		perror("fclose");
 		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);

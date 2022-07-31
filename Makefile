@@ -20,7 +20,7 @@ H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
 SRC_DIR		:=	src
-SRC			:=	main.c
+SRC			:=	main.c	file_handler.c	verifier.c
 
 # Object
 OBJ_DIR		:=	obj
