@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:01:25 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/07/31 23:57:32 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/01 00:01:52 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include <unistd.h>
 
 // file_handler.c
-FILE	infile_opener(void);
-FILE	outfile_handler(void);
+FILE	*infile_opener(void);
+FILE	*outfile_opener(void);
 int		close_fstream(FILE *file);
 
 // verifier.c

@@ -6,14 +6,14 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:16:21 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/07/31 23:59:15 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/01 00:02:06 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "monitoring.h"
 #include "define.h"
 
-FILE	infile_opener(void)
+FILE	*infile_opener(void)
 {
 	FILE	*f_stream;
 
@@ -23,7 +23,7 @@ FILE	infile_opener(void)
 	return (f_stream);
 }
 
-FILE	outfile_opener(void)
+FILE	*outfile_opener(void)
 {
 	FILE	*f_stream;
 
