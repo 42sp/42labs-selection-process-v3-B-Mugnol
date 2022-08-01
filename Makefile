@@ -14,19 +14,20 @@ RM		:=	rm -rf
 # Header that includes all headers
 MASTER_HEADER := master.h
 # Headers
-HEADER_DIR	:=	inc		src/linked_list		src/utilities
+HEADER_DIR	:=	inc		src/linked_list		src/utilities	src/configuration
 HEADER		:=	monitoring.h	define.h	protocol.h
-HEADER		:=	ft_lst.h		utilities.h
+HEADER		:=	ft_lst.h		cfg.h		utilities.h
 H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
-SRC_DIR		:=	src		src/linked_list	src/utilities
+SRC_DIR		:=	src		src/linked_list	src/utilities	src/configuration
 SRC			:=	main.c				file_handler.c		verifier.c
+SRC			+=	cfg_create.c		cfg_delete.c
 SRC			+=	ft_lstnew.c			ft_lstsize.c		ft_lstlast.c		\
 				ft_lstadd_front.c	ft_lstadd_back.c	ft_lstdelone.c		\
 				ft_lstclear.c		ft_lstiter.c		ft_lstmap.c
 SRC			+=	ft_split.c			ft_strlcpy.c		ft_substr.c			\
-				ft_free_char_matrix.c
+				ft_utoa.c			count_lines.c		ft_free_char_matrix.c
 
 # Object
 OBJ_DIR		:=	obj
