@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utilities.h                                        :+:      :+:    :+:   */
+/*   ft_free_char_matrix.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 04:37:48 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/01 19:52:54 by bmugnol-         ###   ########.fr       */
+/*   Created: 2022/08/01 19:51:47 by bmugnol-          #+#    #+#             */
+/*   Updated: 2022/08/01 19:52:26 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILITIES_H
-# define UTILITIES_H
+#include "utilities.h"
 
-#include <stdlib.h>
-#include <string.h>
+// Matrix is expected to be NULL terminated.
+void	ft_free_char_matrix(char ***m)
+{
+	size_t	i;
 
-void	ft_free_char_matrix(char ***m);
-char	**ft_split(char const *s, char c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-
-#endif
+	i = 0;
+	while (*(*m + i) != NULL)
+	{
+		free(*(*m + i));
+		*(*m + i) = NULL;
+		i++;
+	}
+	free(*m);
+	*m = NULL;
+}
