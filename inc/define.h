@@ -6,12 +6,16 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 19:52:12 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/07/28 20:09:36 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/01 21:00:40 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFINE_H
 # define DEFINE_H
+
+# define PROTOCOLS	((char const*[]){"HTTP", "PING", "DNS", NULL})
+
+# define HTTP_METHODS	((char const*[]){"GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "CONNECT", "OPTIONS", "TRACE", NULL})
 
 // Allowed flag
 # define FLAG	"--simplify"
