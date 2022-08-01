@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:01:25 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/01 00:01:52 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/01 04:00:15 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include "protocol.h"
+# include "ft_lst.h"
 
 // file_handler.c
 FILE	*infile_opener(void);
