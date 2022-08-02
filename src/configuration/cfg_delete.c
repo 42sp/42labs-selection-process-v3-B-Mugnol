@@ -6,24 +6,24 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:03:21 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/01 22:11:04 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 20:40:10 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "monitoring.h"
 #include "cfg.h"
 
-void	delete_service(t_service *service)
+void	delete_service(void *service)
 {
 	if (!service)
 		return ;
-	if (service->protocol == HTTP)
-		delete_http_config((t_http *)(service->attr));
-	else if (service->protocol == PING)
-		delete_ping_config((t_ping *)(service->attr));
-	else if (service->protocol == DNS)
-		delete_dns_config((t_dns *)(service->attr));
-	free(service);
+	if (((t_service *)(service))->protocol == HTTP)
+		delete_http_config((t_http *)(((t_service *)(service))->attr));
+	else if (((t_service *)(service))->protocol == PING)
+		delete_ping_config((t_ping *)(((t_service *)(service))->attr));
+	else if (((t_service *)(service))->protocol == DNS)
+		delete_dns_config((t_dns *)(((t_service *)(service))->attr));
+	free(((t_service *)(service)));
 }
 
 void	delete_base_config(t_base_config *config)

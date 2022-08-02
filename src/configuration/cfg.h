@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:49:52 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 04:05:53 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 20:39:15 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*create_ping(char **config);
 void	*create_dns(char **config);
 
 // cfg_delete.c
-void	delete_service(t_service *service);
+void	delete_service(void *service);
 void	delete_base_config(t_base_config *config);
 void	delete_http_config(t_http *config);
 void	delete_ping_config(t_ping *config);
