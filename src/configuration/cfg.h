@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:49:52 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 20:39:15 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:42:28 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 // cfg_get.c
 t_service		*get_service(char *line, size_t line_number);
-t_http_method	get_http_method(char *method);
 
 // cfg_create.c
 void	*create_http(char **config);

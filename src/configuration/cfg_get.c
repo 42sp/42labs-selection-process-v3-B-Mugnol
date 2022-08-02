@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 01:25:17 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 21:42:59 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:40:12 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,6 @@ t_service	*get_service(char *line, size_t line_number)
 	}
 	ft_free_char_matrix(&config_str);
 	return (service);
-}
-
-t_http_method	get_http_method(char *method)
-{
-	t_http_method	mtd;
-
-	if (!method || !*method)
-		return (INVALID);
-	mtd = GET;
-	while (HTTP_METHODS[mtd] && mtd != INVALID)
-	{
-		if (strcmp(method, HTTP_METHODS[mtd]) == 0)
-			break ;
-		mtd++;
-	}
-	return (mtd);
 }
 
 static t_protocol	get_protocol(char *protocol)

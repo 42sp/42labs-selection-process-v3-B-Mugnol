@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:20:44 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 23:23:29 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:40:33 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "utilities.h"
 #include <string.h>
 #include <stdlib.h>
+
+static t_http_method	get_http_method(char *method);
 
 void	*create_http(char **config)
 {
@@ -95,4 +97,20 @@ void	*create_dns(char **config)
 		attr = NULL;
 	}
 	return (attr);
+}
+
+static t_http_method	get_http_method(char *method)
+{
+	t_http_method	mtd;
+
+	if (!method || !*method)
+		return (INVALID);
+	mtd = GET;
+	while (HTTP_METHODS[mtd] && mtd != INVALID)
+	{
+		if (strcmp(method, HTTP_METHODS[mtd]) == 0)
+			break ;
+		mtd++;
+	}
+	return (mtd);
 }
