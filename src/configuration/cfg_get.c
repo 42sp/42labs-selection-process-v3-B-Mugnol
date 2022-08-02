@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 01:25:17 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 03:53:41 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 21:42:59 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,12 @@ t_http_method	get_http_method(char *method)
 {
 	t_http_method	mtd;
 
+	if (!method || !*method)
+		return (INVALID);
 	mtd = GET;
 	while (HTTP_METHODS[mtd] && mtd != INVALID)
 	{
-		if (strcmp(method, PROTOCOLS[mtd]) == 0)
+		if (strcmp(method, HTTP_METHODS[mtd]) == 0)
 			break ;
 		mtd++;
 	}
