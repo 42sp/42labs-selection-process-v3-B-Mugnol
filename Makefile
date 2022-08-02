@@ -16,7 +16,7 @@ MASTER_HEADER := master.h
 # Headers
 HEADER_DIR	:=	inc		src/linked_list		src/utilities	src/configuration
 HEADER		:=	monitoring.h	define.h	protocol.h
-HEADER		:=	ft_lst.h		cfg.h		utilities.h
+HEADER		+=	ft_lst.h		cfg.h		utilities.h
 H_INCLUDE	:=	$(addprefix -I, $(HEADER_DIR))
 
 # Source
