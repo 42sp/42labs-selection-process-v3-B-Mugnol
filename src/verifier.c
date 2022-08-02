@@ -6,12 +6,14 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:28:56 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/07/29 20:33:43 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 00:20:31 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "monitoring.h"
 #include "define.h"
+#include <errno.h>
+#include <stdio.h>
+#include <string.h>
 
 int	program_param_verifier(int argc, char **argv)
 {

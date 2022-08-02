@@ -6,13 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 00:08:51 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 23:19:27 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 00:03:58 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "monitoring.h"
-#include "define.h"
 #include "cfg.h"
+#include "ft_lst.h"
 
 static void	add_service_to_list(t_list **config_lst, char *line,
 				size_t line_number, size_t allocated);

@@ -6,12 +6,11 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:00:09 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 23:24:17 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:58:36 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "monitoring.h"
-#include "define.h"
 #include "cfg.h"
 
 int	main(int argc, char **argv)

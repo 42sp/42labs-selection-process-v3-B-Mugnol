@@ -6,12 +6,14 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 00:00:12 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 21:20:43 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 00:05:06 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PROTOCOL_H
 # define PROTOCOL_H
+
+# include <stdlib.h>
 
 # define PROTOCOLS	((char const*[]){"HTTP", "PING", "DNS", NULL})
 

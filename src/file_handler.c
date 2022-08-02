@@ -6,12 +6,13 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:16:21 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/01 00:02:06 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 00:10:44 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "monitoring.h"
 #include "define.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 FILE	*infile_opener(void)
 {
