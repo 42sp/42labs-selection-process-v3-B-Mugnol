@@ -6,16 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:20:44 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 23:40:33 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:45:13 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "monitoring.h"
-#include "define.h"
 #include "cfg.h"
 #include "utilities.h"
-#include <string.h>
-#include <stdlib.h>
 
 static t_http_method	get_http_method(char *method);
 

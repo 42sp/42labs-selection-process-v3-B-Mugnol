@@ -6,11 +6,10 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:03:21 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 22:02:28 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:44:07 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "monitoring.h"
 #include "cfg.h"
 
 void	delete_service(void *service)

@@ -6,14 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 01:25:17 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 23:40:12 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:45:36 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "monitoring.h"
-#include "utilities.h"
-#include "define.h"
 #include "cfg.h"
+#include "utilities.h"
 
 static t_protocol		get_protocol(char *protocol);
 static void				get_attributes(char **config, t_service *svc);
