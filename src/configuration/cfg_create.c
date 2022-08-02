@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:20:44 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 01:25:32 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:23:29 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	*create_http(char **config)
 	attr->base_attributes.address = strdup(config[2]);
 	attr->method = get_http_method(config[3]);
 	attr->expected_status_code = atoi(config[4]);
+	strtok(config[5], "\n");
 	attr->base_attributes.range = strtoul(config[5], NULL, 10);
 	if (
 		attr->expected_status_code < 100 || attr->expected_status_code >= 600
@@ -60,6 +61,7 @@ void	*create_ping(char **config)
 	attr = malloc(sizeof(t_ping));
 	attr->base_attributes.name = strdup(config[0]);
 	attr->base_attributes.address = strdup(config[2]);
+	strtok(config[3], "\n");
 	attr->base_attributes.range = strtoul(config[3], NULL, 10);
 	if (!is_digit_str(config[3]))
 	{
@@ -85,6 +87,7 @@ void	*create_dns(char **config)
 	attr->base_attributes.name = strdup(config[0]);
 	attr->base_attributes.address = strdup(config[2]);
 	attr->base_attributes.range = strtoul(config[3], NULL, 10);
+	strtok(config[4], "\n");
 	attr->dns_server = strdup(config[4]);
 	if (!is_digit_str(config[3]))
 	{
