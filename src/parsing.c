@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 00:08:51 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 20:48:40 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/02 23:19:27 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "cfg.h"
 
 static void	add_service_to_list(t_list **config_lst, char *line,
-		size_t line_number, size_t allocated);
+				size_t line_number, size_t allocated);
 
 t_list	*get_service_list(FILE *infile)
 {
@@ -35,10 +35,7 @@ t_list	*get_service_list(FILE *infile)
 		chars_read = getline(&line, &allocated, infile);
 		if (chars_read == -1)
 		{
-			perror("getline");
-			ft_lstclear(&config_lst, delete_service);
 			free(line);
-			config_lst = NULL;
 			break ;
 		}
 		add_service_to_list(&config_lst, line, line_number, allocated);
@@ -48,7 +45,7 @@ t_list	*get_service_list(FILE *infile)
 }
 
 static void	add_service_to_list(t_list **config_lst, char *line,
-	size_t line_number, size_t allocated)
+				size_t line_number, size_t allocated)
 {
 	t_service	*service;
 
