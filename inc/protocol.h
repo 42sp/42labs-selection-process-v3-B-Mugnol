@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 00:00:12 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 00:05:06 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 16:44:31 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_base_config
 {
 	char		*name;
 	char		*address;
-	size_t		range;
+	size_t		interval;
 }	t_base_config;
 
 typedef struct s_http
