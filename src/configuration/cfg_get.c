@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 01:25:17 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 18:09:51 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:12:41 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "utilities.h"
 #include "define.h"
 
-static t_protocol		get_protocol(char *protocol);
-static void				get_attributes(char **config, t_service *svc);
+static t_protocol	get_protocol(char *protocol);
+static void			get_attributes(char **config, t_service *svc);
 
 t_service	*get_service(char *line, size_t line_number)
 {
