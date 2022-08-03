@@ -12,7 +12,7 @@ This program was created and tested in an UNIX environment with default C libs, 
 
 ### _Compiling_
 
-To compile, simply clone this repository and run `make` in its root directory to.
+To compile, simply clone this repository and run `make` in its root directory.
 
 ```
 git clone https://github.com/42sp/42labs-selection-process-v3-B-Mugnol.git Labs_B-Mugnol
@@ -20,11 +20,11 @@ cd Labs_B-Mugnol
 make
 ```
 
-This will generate our program, called `monitoring` by default (_`Makefile` variable `NAME`_).
+This will generate our program, called `monitoring` by default (_Makefile variable `NAME`_).
 
 ### _Input setup_
 
-The services to be monitored must have their information stored in a file named `monitoring.db` (_defined in `inc/define.h` as `I_FILE`_) in the root of the cloned repository, following the format examplified below. Each service configuration must be in its own line; fields are separated by any quantity of `TAB`'s [`'\t'`]. Commentaries (_lines **beginning** with `#`_) and empty lines are ignored.
+The services to be monitored must have their information stored in a file named `monitoring.db` (_defined in `inc/define.h` as `I_FILE`_) in the root of the cloned repository, following the format examplified below. Each service configuration must be in its own (_single_) line. Fields are separated by any quantity of TAB's ['\t']. Commentaries (_lines **beginning** with `#`_) and empty lines are ignored.
 
 Protocols are limited to HTTP, PING and DNS.
 
