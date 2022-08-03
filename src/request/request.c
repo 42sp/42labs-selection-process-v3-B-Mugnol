@@ -6,13 +6,13 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 01:49:17 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 17:10:56 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:14:53 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "request.h"
 
-void	request(t_list *config_lst, FILE *outfile)
+void	make_requests(t_list *config_lst, FILE *outfile)
 {
 	while (config_lst)
 	{
