@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 00:00:12 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 17:22:50 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:59:57 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,6 @@ typedef enum e_http_method
 	INVALID
 }	t_http_method;
 
-typedef struct s_service
-{
-	t_protocol	protocol;
-	void		*attr;
-}	t_service;
-
 typedef struct s_base_config
 {
 	char		*name;
@@ -56,6 +50,13 @@ typedef struct s_base_config
 	size_t		interval;
 }	t_base_config;
 
+typedef struct s_service
+{
+	t_protocol	protocol;
+	void		*attr;
+}	t_service;
+
+// t_service's "attr" will receive a pointer to one of the following structs:
 typedef struct s_http
 {
 	struct s_base_config	base_attributes;
