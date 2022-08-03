@@ -48,7 +48,7 @@ Most fields are self-explanatory. The `interval` fields indicates how often, in 
 
 You can have multiple services of diverse protocols written to `monitoring.db` in any order, as long as each configuration line respects its protocol's field formatting.
 
-**Note: for now, only HTTP services using the HEAD protocol work as expected**
+**Note: only HTTP services using the HEAD method work**
 
 ### _Executing_
 
