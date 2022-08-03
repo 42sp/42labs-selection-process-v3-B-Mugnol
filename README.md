@@ -33,14 +33,14 @@ Protocols are limited to HTTP, PING and DNS.
 
 # HTTP services:
 # name		protocol	address			HTTP method	expected HTTP code	interval
-intra 42	HTTP		intra.42.fr		GET		301				30
+intra 42	HTTP		intra.42.fr		GET		301			30
 
 # PING services:
 # name		protocol	address			interval
 game ping	PING		game.42sp.org.br	15
 
 # DNS services:
-# name		protocol	address				interval
+# name		protocol	address			interval
 workspaces	DNS		workspaces.42sp.org.br	60
 ```
 
