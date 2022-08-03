@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 01:25:17 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 23:45:36 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:06:32 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ static void	get_attributes(char **config, t_service *svc)
 	if (svc->protocol == NONE)
 		svc->attr = NULL;
 	else if (svc->protocol == HTTP)
-		svc->attr = create_http(config);
+		svc->attr = (void *)(create_http(config));
 	else if (svc->protocol == PING)
-		svc->attr = create_ping(config);
+		svc->attr = (void *)(create_ping(config));
 	else if (svc->protocol == DNS)
-		svc->attr = create_dns(config);
+		svc->attr = (void *)(create_dns(config));
 }

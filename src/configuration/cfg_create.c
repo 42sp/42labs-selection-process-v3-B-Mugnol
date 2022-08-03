@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 04:20:44 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 16:54:08 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 18:06:05 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static t_http_method	get_http_method(char *method);
 
-void	*create_http(char **config)
+t_http	*create_http(char **config)
 {
 	t_http	*attr;
 
@@ -45,7 +45,7 @@ void	*create_http(char **config)
 	return (attr);
 }
 
-void	*create_ping(char **config)
+t_ping	*create_ping(char **config)
 {
 	t_ping	*attr;
 
@@ -70,7 +70,7 @@ void	*create_ping(char **config)
 	return (attr);
 }
 
-void	*create_dns(char **config)
+t_dns	*create_dns(char **config)
 {
 	t_dns	*attr;
 
