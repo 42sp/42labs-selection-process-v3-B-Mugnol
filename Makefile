@@ -5,7 +5,7 @@ NAME	:=	monitoring
 # C Compiler
 CC		:=	clang
 # Compiler flags
-CFLAGS	:=	#-Wall -Wextra -Werror
+CFLAGS	:=	-Wall -Wextra -Werror
 # Removal tool
 RM		:=	rm -rf
 
