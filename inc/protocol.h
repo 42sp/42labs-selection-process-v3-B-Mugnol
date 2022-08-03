@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 00:00:12 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 16:44:31 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:22:50 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PROTOCOL_H
 
 # include <stdlib.h>
+
+# define MAX_DATA_FETCHS	5
 
 # define PROTOCOLS	((char const*[]){"HTTP", "PING", "DNS", NULL})
 
