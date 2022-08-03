@@ -6,7 +6,7 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:01:25 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 17:25:16 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:32:05 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include "ft_lst.h"
-# include "request.h"
 
 // parsing.c
 t_list	*get_service_list(FILE *infile);

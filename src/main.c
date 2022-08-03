@@ -6,11 +6,12 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 20:00:09 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/02 23:58:36 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:32:12 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "monitoring.h"
+#include "request.h"
 #include "cfg.h"
 
 int	main(int argc, char **argv)
@@ -30,6 +31,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	}
 	service_lst = get_service_list(config_file);
+	request(service_lst, log_file);
 	close_fstream(config_file);
 	close_fstream(log_file);
 	ft_lstclear(&service_lst, delete_service);
