@@ -1,78 +1,63 @@
-# 42 Labs 3º Edição
+# 42 Labs 3rd Edition
 
-Este é desafio técnico do processo seletivo da 3º Edição do 42 Labs. É neste momento que você poderá aplicar os seus conhecimentos, trabalhando com outros Cadetes para desenvolver uma aplicação que tem como o objetivo apresentar conhecimentos que passam pelas área de desenvolvimento web e redes, que serão especialmente importantes no 42 Labs.
+## Challenge
 
-## Desafio
+This is the technical challenge for **42 Labs 3rd Edition**'s selection process. It constitutes of creating a web monitoring tool using C.
 
-Em uma linha: Aplicação de monitoramento de serviços web.
+## Requirements
 
-Vamos monitorar serviços web utilizando 3 protocolos: *HTTP*, *PING* e *DNS*. Para cada protocolo, existirão configurações que definem como o monitoramento vai acontecer, assim como o endereço do serviço monitorado. As configurações de monitoramento estarão em um arquivo com nome `monitoring.db`, onde cada linha representa uma espécie de monitoramento com base nas configurações definidas na mesma linha. O programa `monitoring` irá procurar e analisar esse arquivo, iniciando o processo de monitoramento.
+This program was created and tested in an UNIX environment with default C libs, clang compiler and libcurl installed. Its capacity to compile and run in other enviroments is completely untested.
 
-Velho conhecido seu, o *C* será utilizado para o desenvolvimento.
+## Usage
 
-### monitoring.db
+### _Compiling_
 
-O arquivo `monitoring.db` define como a sua aplicação vai agir. Esse arquivo tem uma estrutura estrita e deve ser rejeitado caso não corresponda a essa estrutura.
+Simply clone this repository and run `make` in its root directory.
 
-A estrutura é definida por linhas e colunas, onde cada linha terá as configurações separadas por um TAB, que definem as colunas. Para cada monitoramento, as configurações até a 3º coluna serão as mesmas, já a partir da 4º a configuração é específica, baseando-se no protocolo escolhido na 2º coluna.
-
-As configurações para cada protocolo são:
-
-| Protocolo   | Configurações                                                           |
-|-------------|-------------------------------------------------------------------------|
-| HTTP        | nome, protocolo, endereço, método HTTP, código HTTP esperado, intervalo |
-| PING        | nome, protocolo, endereço, intervalo                                    |
-| DNS         | nome, protocolo, endereço, intervalo, servidor DNS                      |
-
-Abaixo, exemplo do arquivo descrito acima:
-
-```txt
-# monitoring.db
-
-intra	HTTP	intra.42.fr	GET	200	120
-game ping test	PING	game.42sp.org.br	60
-workspaces monitoring	PING	workspaces.42sp.org.br	60
+```
+git clone https://github.com/42sp/42labs-selection-process-v3-B-Mugnol.git Labs_B-Mugnol
+cd Labs_B-Mugnol
+make
 ```
 
-### monitoring
+### _Input setup_
 
-O programa `monitoring` é onde tudo vai acontecer. Lendo o arquivo de configuração, os serviços devem começar a ser monitorados da mesma forma que foram configurados.
+The services to be monitored must have their information stored in a file named `monitoring.db` (_defined in `inc/define.h` as `I_FILE`_) in the root of the cloned repository, following the format examplified below. Each service configuration must be in its own line; fields are separated by any quantity of `TAB`'s [`'\t'`]. Commentaries (_lines **beginning** with `#`_) and empty lines are ignored.
 
-Informações dos serviços monitorados devem ser exibidas na saída padrão de uma forma sucinta e informações mais detalhadas para análises aprofundadas devem ser armazenadas no arquivo `monitoring.log` usando uma estrutura estrita e padronizada, definida por você. Deve ser possível também adquirir as informações sucintas, as mesmas que uma vez estavam na saída padrão, apenas utilizando o argumento `--simplify` no programa.
+Protocols are limited to HTTP, PING and DNS.
 
-Um serviço saudável é aquele que consegue responder a requisição do monitoramento de forma esperada, em contrapartida ao serviço não saudável que não responde de forma esperada. Sendo um serviço de monitoramento, a sua aplicação deve ser capaz de identificar e exibir essa informação corretamente.
+```bash
+# monitoring.db
 
-### É necessário
+# HTTP services:
+# name		protocol	address			HTTP protocol	expected HTTP code	interval
+intra 42	HTTP		intra.42.fr		GET				301					30
 
-- Que o programa seja útil e realmente funcione como um serviço de monitoramento de serviços.
-- Que exista um programa chamado `monitoring`.
-- O arquivo `monitoring.db` deve ser analisado e validado pelo programa.
-- Os serviços configurados para monitoramento devem seguir as configurações definidas.
-- Arquivo `monitoring.log` deve armazenar todas as informações possíveis do monitoramento e deve ser possível traduzir a sua estrutura de uma forma resumida, sucinta utilizando o argumento ao programa `--simplify`.
+# PING services:
+# name		protocol	address				interval
+game ping	PING		game.42sp.org.br	15
 
-### O que será avaliado
+# DNS services:
+# name		protocol	address					interval
+workspaces	DNS			workspaces.42sp.org.br	60
+```
 
-- Código bem escrito e limpo.
-- A documentação do seu código.
-- Ferramentas que foram utilizadas e por quê.
-- Sua criatividade e capacidade de lidar com problemas diferentes.
-- Alinhamento do seu projeto com a proposta.
+Most fields are self-explanatory. The `interval` fields indicates how often, in seconds, a service will be monitored and generate a new output.
 
-### O mínimo necessário
+You can have multiple services of diverse protocols written to `monitoring.db` in any order, as long as each configuration line respects its protocol's field formatting.
 
-- README.md com a documentação contendo informações do projeto.
+**Note: for now, only HTTP services using the HEAD protocol work as expected**
 
-### Bônus
+### _Executing_
 
-Os itens a seguir não são obrigatórios, mas são funcionalidades que darão mais valor ao seu programa.
+Execute the program generated in the *Compiling* step. It's called *monitoring* by default (_`NAME` variable in *Makefile*_).
 
-- Notificação de serviço não saudável no Discord, email, Slack ou Webhook.
-- Testes.
-- Identificação de comportamentos incomuns dos serviços monitorados, como o aumento de latência de resposta.
-- Análise agregada dos dados do arquivo `monitoring.log`, exibindo diagramas e gráficos da CLI.
-- Parseamento de argumentos UNIX-Like podendo filtrar ou alterar comportamentos da aplicação.
-- Cuidados especiais com otimização e padrões de código.
-- Possibilidade de monitoramento MQTT e TCP.
-- Uso de ferramentas externas para planejamento nas etapas de desenvolvimento.
+```
+./monitoring
+```
 
-<sub><sup>[Importante](https://imgs.xkcd.com/comics/networking_problems.png)</sup></sub>
+It also accepts the flag *--simplify*, although its usage is yet to be implemented.
+
+### _Output_
+
+For now, the program appends the result of HTTP HEAD requests to the `monitoring.log` file (_defined in `inc/define.h` as `O_FILE`_). A maximum of _`MAX_DATA_FETCHS`_ (_defined in `inc/protocol.h`_) results are written per service correctly specified in `monitoring.db`.
