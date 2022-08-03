@@ -32,16 +32,16 @@ Protocols are limited to HTTP, PING and DNS.
 # monitoring.db
 
 # HTTP services:
-# name		protocol	address			HTTP protocol	expected HTTP code	interval
-intra 42	HTTP		intra.42.fr		GET				301					30
+# name		protocol	address			HTTP method	expected HTTP code	interval
+intra 42	HTTP		intra.42.fr		GET		301				30
 
 # PING services:
-# name		protocol	address				interval
+# name		protocol	address			interval
 game ping	PING		game.42sp.org.br	15
 
 # DNS services:
-# name		protocol	address					interval
-workspaces	DNS			workspaces.42sp.org.br	60
+# name		protocol	address				interval
+workspaces	DNS		workspaces.42sp.org.br	60
 ```
 
 Most fields are self-explanatory. The `interval` fields indicates how often, in seconds, a service will be monitored and generate a new output.
