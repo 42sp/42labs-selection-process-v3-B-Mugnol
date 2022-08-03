@@ -6,19 +6,21 @@ This is the technical challenge for **42 Labs 3rd Edition**'s selection process.
 
 ## Requirements
 
-This program was created and tested in an UNIX environment with default C libs, clang compiler and libcurl installed. Its capacity to compile and run in other enviroments is completely untested.
+This program was created and tested in an UNIX environment with default C libs, clang compiler and libcurl installed. Its capacity to compile and run in other environments is completely untested.
 
 ## Usage
 
 ### _Compiling_
 
-Simply clone this repository and run `make` in its root directory.
+To compile, simply clone this repository and run `make` in its root directory to.
 
 ```
 git clone https://github.com/42sp/42labs-selection-process-v3-B-Mugnol.git Labs_B-Mugnol
 cd Labs_B-Mugnol
 make
 ```
+
+This will generate our program, called `monitoring` by default (_`Makefile` variable `NAME`_).
 
 ### _Input setup_
 
@@ -50,13 +52,13 @@ You can have multiple services of diverse protocols written to `monitoring.db` i
 
 ### _Executing_
 
-Execute the program generated in the *Compiling* step. It's called *monitoring* by default (_`NAME` variable in *Makefile*_).
+Execute the program generated (*`monitoring`* by default) in the *Compiling* step.
 
 ```
-./monitoring
+./monitoring [--simplify]
 ```
 
-It also accepts the flag *--simplify*, although its usage is yet to be implemented.
+The optional flag *--simplify* is accepted, although its functionality is yet to be implemented.
 
 ### _Output_
 
