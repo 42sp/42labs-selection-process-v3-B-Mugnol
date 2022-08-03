@@ -6,12 +6,13 @@
 /*   By: bmugnol- <bmugnol-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 00:08:51 by bmugnol-          #+#    #+#             */
-/*   Updated: 2022/08/03 00:03:58 by bmugnol-         ###   ########.fr       */
+/*   Updated: 2022/08/03 17:45:08 by bmugnol-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cfg.h"
 #include "ft_lst.h"
+#include <stdio.h>
 
 static void	add_service_to_list(t_list **config_lst, char *line,
 				size_t line_number, size_t allocated);
